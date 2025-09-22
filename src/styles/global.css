@@ -1,0 +1,77 @@
+
+/*-----React básico-----*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-----Estilo general del body-----*/
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/*------Layout principal-----*/
+.Layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/*-------Header--------*/
+.header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/*------Cuerpo con sidebar y contenido-------*/
+.body {
+    display: flex;
+    flex: 1;
+}
+
+/*------Sidebar--------*/
+.sidebar {
+    width: 220px;
+    background-color: #e9ecf1;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar li:hover {
+    background-color: #d0d7e2;
+}
+
+/*--------Contenido Principal------*/
+.content {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+/*--------Footer---------*/
+.footer {
+    background-color: #e0e0e0;
+    padding: 0.8rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}

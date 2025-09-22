@@ -1,0 +1,32 @@
+[
+  {
+    "user": "sofia_ig",
+    "text": "Hola!! ¿Cómo estás?",
+    "platform": "Instagram"
+  },
+  {
+    "user": "juan_dev",
+    "text": "JAJAJAJ",
+    "platform": "Instagram"
+  },
+  {
+    "user": "meme_master",
+    "text": "¿Viste el nuevo reel?",
+    "platform": "Instagram"
+  },
+  {
+    "user": "lucas_wh",
+    "text": "Te mando el archivo por acá",
+    "platform": "Whatsapp"
+  },
+  {
+    "user": "carla_msn",
+    "text": "Nos vemos a las 18!",
+    "platform": "Messenger"
+  },
+  {
+    "user": "bot_telegram",
+    "text": "Tu código de verificación es 123456",
+    "platform": "Telegram"
+  }
+]
