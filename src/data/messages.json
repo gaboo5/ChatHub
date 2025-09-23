@@ -2,31 +2,37 @@
   {
     "user": "sofia_ig",
     "text": "Hola!! ¿Cómo estás?",
-    "platform": "Instagram"
+    "platform": "Instagram",
+    "timestamp": "2024-01-01T10:00:00Z"
   },
   {
     "user": "juan_dev",
     "text": "JAJAJAJ",
-    "platform": "Instagram"
+    "platform": "Instagram",
+    "timestamp": "2024-01-01T10:01:00Z"
   },
   {
     "user": "meme_master",
     "text": "¿Viste el nuevo reel?",
-    "platform": "Instagram"
+    "platform": "Instagram",
+    "timestamp": "2024-01-01T10:02:00Z"
   },
   {
     "user": "lucas_wh",
     "text": "Te mando el archivo por acá",
-    "platform": "Whatsapp"
+    "platform": "Whatsapp",
+    "timestamp": "2024-01-01T10:03:00Z"
   },
   {
     "user": "carla_msn",
     "text": "Nos vemos a las 18!",
-    "platform": "Messenger"
+    "platform": "Messenger",
+    "timestamp": "2024-01-01T10:04:00Z"
   },
   {
     "user": "bot_telegram",
     "text": "Tu código de verificación es 123456",
-    "platform": "Telegram"
+    "platform": "Telegram",
+    "timestamp": "2024-01-01T10:05:00Z"
   }
 ]
