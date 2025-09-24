@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Home from './components/Home'; 
 import Layout from './components/Layout'; 
+import Profiles from './components/Profiles';
 
 function App() {
     
@@ -18,7 +19,8 @@ function App() {
                 
                 <Route path="/chat" element={<Layout onSelectPlatform={() => {}} selectedPlatform="Instagram" />} />
                 
-                {/*  <Route path="/profiles" element={<div>Sección de Perfiles (a implementar)</div>} /> */}
+                <Route path="/Profiles" element={<Profiles />} />
+                
             </Routes>
         </Router>
     );
