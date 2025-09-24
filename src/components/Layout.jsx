@@ -1,4 +1,6 @@
+
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import InstagramChat from './InstagramChat';
 import WhatsappChat from './WhatsappChat';
 import MessengerChat from './MessengerChat';
@@ -6,10 +8,12 @@ import TelegramChat from './TelegramChat';
 import UnifiedChat from './UnifiedChat'; 
 import messages from '../data/messages.json';
 
-export default function Layout({ onSelectPlatform, selectedPlatform }) {
+export default function Layout() { 
+
     const [liveMessages, setLiveMessages] = useState(messages);
     const [menuOpen, setMenuOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
+    const [selectedPlatform, setSelectedPlatform] = useState(null); 
 
     // Aplicar el modo oscuro - Efecto principal
     useEffect(() => {
@@ -61,10 +65,12 @@ export default function Layout({ onSelectPlatform, selectedPlatform }) {
         return () => clearInterval(interval);
     }, []);
 
+    // Filtrar mensajes según la plataforma seleccionada o mostrar todos si es "Unificado" o ninguna
     const filteredMessages = selectedPlatform && selectedPlatform !== 'Unificado'
         ? liveMessages.filter(msg => msg.platform === selectedPlatform)
         : liveMessages;
 
+    // Función para renderizar el chat basado en la plataforma seleccionada
     const renderChat = () => {
         switch (selectedPlatform) {
             case 'Instagram':
@@ -78,11 +84,12 @@ export default function Layout({ onSelectPlatform, selectedPlatform }) {
             case 'Unificado':
                 return <UnifiedChat messages={filteredMessages} />;
             default:
+                // Mostrar un mensaje o el chat unificado por defecto
                 return (
                     <div className="flex items-center justify-center h-full p-8">
                         <div className="text-center bg-white dark:bg-gray-800 rounded-lg shadow p-6">
                             <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-                                Bienvenido a 3NGTech
+                                Bienvenido al Chat
                             </h2>
                             <p className="text-gray-600 dark:text-gray-300">
                                 Selecciona una plataforma para comenzar
@@ -99,7 +106,7 @@ export default function Layout({ onSelectPlatform, selectedPlatform }) {
             {/* Header */}
             <header className="flex items-center justify-between bg-red-600 px-4 py-3 shadow">
                 <div className="flex items-center gap-2">
-                    <span className="text-white text-2xl font-bold">⚡ 3NGTech</span>
+                    <Link to="/" className="text-white text-2xl font-bold">⚡ 3NGTech</Link>
                 </div>
                 <div className="flex items-center gap-3">
                     <button
@@ -131,7 +138,7 @@ export default function Layout({ onSelectPlatform, selectedPlatform }) {
                         <button
                             key={platform}
                             onClick={() => {
-                                onSelectPlatform(platform);
+                                setSelectedPlatform(platform);
                                 setMenuOpen(false);
                             }}
                             className={`w-full px-4 py-2 rounded-full text-sm transition
@@ -145,7 +152,7 @@ export default function Layout({ onSelectPlatform, selectedPlatform }) {
                     ))}
                     <button
                         onClick={() => {
-                            onSelectPlatform(null);
+                            setSelectedPlatform(null); // Mostrará el mensaje por defecto
                             setMenuOpen(false);
                         }}
                         className="w-full text-left px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-700 text-sm text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-[#333] transition"
@@ -154,7 +161,7 @@ export default function Layout({ onSelectPlatform, selectedPlatform }) {
                     </button>
                 </aside>
 
-                {/* Main content */}
+                {/* Main content - Aquí se renderiza el chat seleccionado */}
                 <main className="flex-1 p-6 overflow-y-auto md:ml-64 bg-gray-100 dark:bg-gray-800">
                     {renderChat()}
                 </main>
